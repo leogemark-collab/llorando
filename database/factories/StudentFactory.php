@@ -18,28 +18,21 @@ class StudentFactory extends Factory
     public function definition(): array
     {
         return [
-            'first_name' => fake()->name(),
-             'last_name' => fake()->lastname(),
-             'email' => fake()->unique()->safeEmail(),
-             'program' => fake()->randomElement([
+            'first_name' => fake()->firstName(),
+            'last_name' => fake()->lastName(),
+            'email' => fake()->unique()->safeEmail(),
+            'program' => fake()->randomElement([
                 'BSIT',
                 'BSCS',
                 'BSIS',
-             ]),
-             'gender' => fake()->RandomElement([
+            ]),
+            'gender' => fake()->randomElement([
                 'female',
                 'male',
 
-        ]),
-             'birthday' => fake()
-             ->dateTimeBetween('-25 years', '-17 years')
-             ->format('Y-m-d'),
-             'year_level' => fake()->numberBetween(1,4),
-
-        
-             
+            ]),
+            'birthday' => fake()->dateTimeBetween('-25 years', '-17 years')->format('Y-m-d'),
+            'year_level' => fake()->numberBetween(1, 4),
         ];
     }
 }
-
-
